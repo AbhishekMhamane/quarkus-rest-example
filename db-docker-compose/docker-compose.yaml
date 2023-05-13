@@ -1,0 +1,12 @@
+version: "3.7"
+services:
+  user-db:
+    image: "mysql:8.0.31"
+    restart: on-failure
+    ports:
+      - 3306:3306
+    volumes:
+      - ./user-mysql:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: userdb
+      MYSQL_ROOT_PASSWORD: 1234
